@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="todo_list.css">
+</head>
+<body>
+<div class="contanier">
+    <div class="todo-app">
+    <h1>Todo-List</h1>
+    <div class="star">
+        <div class="detail">
+            <h3>Keep it Up!</h3>
+            <div id="progress">
+            <div id="process"></div>
+            </div>
+        </div>
+        <div class="start"><p id="number">0 / 0</p></div>
+    </div>
+    <form class="input-section">
+        <input id="task-input" placeholder="Enter a new task">
+        <button type="submit" id="add-task-btn">➕</button>
+        
+    </form>
+    <div class="todos-contanier">
+        <ul id="todo">
+        </ul>
+        <img src="Screenshot 2025-09-08 001201.png" alt="No tasks" id="no-tasks-img">
+        </div>
+     </div>
+  </div>
+<script src="todo-list.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+</body>
+</html>

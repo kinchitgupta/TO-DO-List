@@ -1,0 +1,279 @@
+*{
+ padding: 0%;
+ margin: 0%;
+ box-sizing: border-box;
+}
+body{
+    min-width: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    background: url(Screenshot\ 2025-09-08\ 011128.png) no-repeat center center/cover;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 160%;
+    padding: 0 , 20px;
+
+}
+#no-tasks-img {
+    width: 200px;
+    height: auto;
+    display: block;
+    border-radius: 10%;
+    margin: 0 auto;
+}
+.todo-app{
+    width: 100%;
+    margin-top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    flex-direction: column;
+    gap: 30px;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(145, 117, 117, 0.5);
+    border: 3px solid rgb(48, 142, 168);
+    backdrop-filter: blur(10px);
+}
+.todo-app h1{
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+#task-input {
+    flex: auto;
+    padding: 12px 18px;
+    font-size: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Placeholder styling */
+#task-input::placeholder {
+    color: rgba(200, 255, 255, 0.6);
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+/* On focus */
+.task-input:focus {
+    border-color: #FF5A77;  /* same highlight color as your progress circle */
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 8px rgba(255, 90, 119, 0.6);
+}
+
+
+#add-task-btn{
+ font-size: 1rem;
+ cursor: pointer;
+ background-color: transparent;
+ border: none;
+}
+#add-task-btn:hover{
+    color: rgb(48, 142, 168);
+    transform: scale(1.3);
+    transition: 0.3s all ease;
+}
+#todo{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 4px;
+    
+}
+#todo li{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background: rgba(108, 99, 156, 0.2);
+ margin-bottom: 10px;
+ border-radius: 50px;
+ font-size: medium;
+ color: white;
+padding: 8px 12px;
+ position: relative;
+ transition: box-shadow 0.5s ease;
+ flex-wrap: wrap;
+
+}
+#todo li.completed .task-text{
+    text-decoration: line-through;
+    color: rgb(0, 4, 2);
+}
+#todo li:hover {
+ box-shadow: 0 0 10px rgba(145, 117, 117, 0.5);
+}
+#todo li .task-checkbox{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    border: 2px solid rgb(48, 142, 168);
+    background: transparent;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: all 0.4s ease;
+    appearance: none;
+    
+}
+#todo li .task-checkbox:checked{
+    background: rgb(34, 121, 118);
+    transform: scale(1.2);
+    border-radius: 100%; ;
+
+}
+#todo li .task-checkbox:checked::before{
+    content: '\2713';
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+}
+#todo li .task-text{
+    flex: 1;
+    margin-left: 10px;
+    margin-right: 90px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+/* Container for edit & delete buttons */
+.b1 {
+    display: flex;
+    gap: 12px;   /* spacing between buttons */
+    margin-left: auto;
+}
+
+/* General button style */
+.b1 button {
+    all: unset;   /* remove default browser styles */
+    width: 34px;
+    height: 34px;
+    background: transparent;   /* transparent background */
+    border-radius: 50%;        /* circular buttons */
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.b1 button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 8px rgba(48, 142, 168, 0.6);
+}
+
+/* Different colors for actions */
+.b1 .edit-btn {
+    color: #4CAF50; /* green */
+}
+.b1 .edit-btn:hover {
+    background: rgba(76, 175, 80, 0.2);
+}
+
+.b1 .delete-btn {
+    color: #FF4C4C; /* red */
+}
+.b1 .delete-btn:hover {
+    background: rgba(255, 76, 76, 0.2);
+}
+.star {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 320px;                /* fixed card width */
+    padding: 20px 25px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    backdrop-filter: blur(12px);
+}
+
+/* Left side text */
+.detail h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+}
+
+/* Progress bar container */
+#progress {
+    width: 120px;
+    height: 8px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 8px;
+    position: relative;
+}
+
+/* Actual progress */
+#process {
+    height: 100%;
+    width: 0%;   /* set via JS later */
+    background: #FF5A77;   /* same pinkish tone as image */
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+/* Circle number badge */
+#number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #FF5A77;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(255,90,119,0.5);
+}
+@media  (max-width: 600px){
+    .container{
+        margin: 0px 20px;
+    }
+    .todo-app{
+    
+        padding: 30px;
+        gap: 20px;
+    }
+    #number{
+        width: 45px;
+        height: 45px;
+        font-size: 0.9rem;
+    }
+    #task-input{
+        font-size: 1rem;
+
+
+    }
+    #todo{
+        font-size: 1rem;
+
+    }
+} 
